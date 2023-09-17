@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ShoeApi\ShoeApi.csproj" />
+    <ProjectReference Include="..\UndergroundApi\UndergroundApi.csproj" />
   </ItemGroup>
 
 </Project>

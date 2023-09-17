@@ -1,8 +1,6 @@
 using JwtTokenAuthentication;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using ShoeApi.Repositories;
-using System.Text;
+using UndergroundApi.Entities;
+using UndergroundApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +10,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddScoped<IShoeRepository, ShoeRepository>();
+builder.Services.AddScoped<OcelotUndergroundContext>();
+builder.Services.AddScoped<IRapperRepository, RapperRepository>();
 
 builder.Services.AddJwtAuthentication();
 

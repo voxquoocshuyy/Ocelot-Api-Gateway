@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
-using ShoeApi.Models;
+using UndergroundApi.Models;
 using System.Net;
 
 namespace Tests;
 
-public class ShoesControllerTests : IClassFixture<WebApplicationFactory<Program>>
+public class UndergroundControllerTests : IClassFixture<WebApplicationFactory<Program>>
 {
     private readonly WebApplicationFactory<Program> _webApplicationFactory;
 
-    public ShoesControllerTests(WebApplicationFactory<Program> webApplicationFactory)
+    public UndergroundControllerTests(WebApplicationFactory<Program> webApplicationFactory)
     {
         _webApplicationFactory = webApplicationFactory;
     }

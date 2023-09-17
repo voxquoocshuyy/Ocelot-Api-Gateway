@@ -5,13 +5,13 @@ VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotGateway", "OcelotGateway\OcelotGateway.csproj", "{F0481F56-52C8-4C03-B3B3-DC58A55BFD76}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoeApi", "ShoeApi\ShoeApi.csproj", "{F59EF211-ABA9-4537-A3F2-5A2613D50D90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UndergroundApi", "UndergroundApi\UndergroundApi.csproj", "{F59EF211-ABA9-4537-A3F2-5A2613D50D90}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthApi", "AuthApi\AuthApi.csproj", "{9097BCF9-AAD3-47B2-9114-E70797E5704B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtTokenAuthentication", "JwtTokenAuthentication\JwtTokenAuthentication.csproj", "{993D5D2F-78F0-4FB9-A935-38D111F90C08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoeApi.Tests", "Tests\ShoeApi.Tests.csproj", "{D259E20C-CE03-4719-8A46-36BDBDD0EAE9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndergroundApi.Tests", "Tests\UndergroundApi.Tests.csproj", "{D259E20C-CE03-4719-8A46-36BDBDD0EAE9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthApi.Tests", "AuthApi.Tests\AuthApi.Tests.csproj", "{E1CF8434-47CF-4433-98C8-A7582788F791}"
 EndProject
