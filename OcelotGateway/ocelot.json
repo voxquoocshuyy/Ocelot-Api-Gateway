@@ -13,9 +13,9 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/shoes",
+      "UpstreamPathTemplate": "/rappers",
       "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/shoes",
+      "DownstreamPathTemplate": "/api/rapper",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {

@@ -1,24 +1,25 @@
 ﻿using AuthApi.Auth.Models;
-using AuthApi.Models;
 using JwtTokenAuthentication;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using AuthApi.Entities;
 
 namespace AuthApi;
 
 public class JwtTokenService
 {
-    private readonly List<User> _users = new()
+    private readonly OcelotUserContext _context;
+
+    public JwtTokenService(OcelotUserContext context)
     {
-        new("admin", "aDm1n", "Administrator", new[] { "shoes.read" }),
-        new("user01", "u$3r01", "User", new[] { "shoes.read" })
-    };
+        _context = context;
+    }
 
     public AuthenticationToken? GenerateAuthToken(LoginModel loginModel)
     {
-        var user = _users.FirstOrDefault(u => u.Username == loginModel.Username && u.Password == loginModel.Password);
+        var user = _context.Users.FirstOrDefault(u => u.Name == loginModel.Username && u.Password == loginModel.Password);
 
         if (user is null)
         {
@@ -31,8 +32,8 @@ public class JwtTokenService
 
         var claims = new List<Claim>
         {
-            new Claim(JwtRegisteredClaimNames.Name, user.Username),
-            new Claim("role", user.Role),
+            new Claim(JwtRegisteredClaimNames.Name, user.Name),
+            new Claim("role", user.Role.Name),
             new Claim("scope", string.Join(" ", user.Scopes))
         };
 
