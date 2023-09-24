@@ -6,7 +6,7 @@ using System.Text;
 namespace JwtTokenAuthentication;
 public static class JwtExtensions
 {
-    public const string SecurityKey = "secretJWTsigningKey@123";
+    public const string SecurityKey = "secretJWTsigningKey@123ThisIsAKeyItSoHardToHack";
 
     public static void AddJwtAuthentication(this IServiceCollection services)
     {

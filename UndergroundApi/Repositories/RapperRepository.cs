@@ -5,15 +5,26 @@ namespace UndergroundApi.Repositories;
 public class RapperRepository : IRapperRepository
 {
     private readonly OcelotUndergroundContext _context;
+    private readonly ILogger<RapperRepository> _logger;
 
-    public RapperRepository(OcelotUndergroundContext context)
+    public RapperRepository(OcelotUndergroundContext context, ILogger<RapperRepository> logger)
     {
         _context = context;
+        _logger = logger;
     }
 
     public List<Rapper> GetRapper()
     {
-        return _context.Rappers.ToList();   
+        try
+        {
+            _logger.LogInformation($"Get rapper: {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}");
+            return _context.Rappers.ToList();
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"Error: {e.Message}");
+            throw;
+        }
     }
 
     public bool DeleteRapper(int id)

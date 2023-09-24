@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UndergroundApi.Repositories;
 
@@ -13,12 +14,14 @@ public class RapperController : ControllerBase
         _rapperRepository = rapperRepository;
     }
     [HttpGet]
+    [AllowAnonymous]
     public IActionResult Get()
     {
         return Ok(_rapperRepository.GetRapper());
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles ="Admin")]
     public IActionResult Delete(int id)
     {
         var shoeDeleted = _rapperRepository.DeleteRapper(id);

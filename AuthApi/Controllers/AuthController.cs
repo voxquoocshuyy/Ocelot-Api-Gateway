@@ -6,9 +6,9 @@ namespace AuthApi.Controllers;
 [ApiController]
 public class AuthController : ControllerBase
 {
-    private readonly JwtTokenService _jwtTokenService;
+    private readonly IJwtTokenService _jwtTokenService;
 
-    public AuthController(JwtTokenService jwtTokenService)
+    public AuthController(IJwtTokenService jwtTokenService)
     {
         _jwtTokenService = jwtTokenService;
     }

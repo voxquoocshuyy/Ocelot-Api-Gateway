@@ -15,23 +15,19 @@
     {
       "UpstreamPathTemplate": "/rappers",
       "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/rapper",
+      "DownstreamPathTemplate": "/api/Rapper",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
           "Port": 5001
         }
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": ["shoe.read"]
-      }
+      ]
     },
     {
-      "UpstreamPathTemplate": "/shoes/{id}",
+      "UpstreamPathTemplate": "/Rapper/{id}",
       "UpstreamHttpMethod": [ "Delete" ],
-      "DownstreamPathTemplate": "/api/shoes/{id}",
+      "DownstreamPathTemplate": "/api/Rapper/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
