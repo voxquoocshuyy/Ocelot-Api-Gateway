@@ -3,7 +3,6 @@ using JwtTokenAuthentication;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Security.Cryptography;
 using System.Text;
 using AuthApi.Entities;
 
@@ -25,7 +24,8 @@ public class JwtTokenService : IJwtTokenService
 
     public AuthenticationToken GenerateAuthToken(LoginModel loginModel)
     {
-        var user = _context.Users.FirstOrDefault(u => u.Name == loginModel.Username && u.Password == loginModel.Password);
+        var user = _context.Users.FirstOrDefault(
+            u => u.Name == loginModel.Username && u.Password == loginModel.Password);
 
         if (user is null)
         {
@@ -37,12 +37,12 @@ public class JwtTokenService : IJwtTokenService
         {
             throw new Exception("Invalid role of user.");
         }
-        
+
         var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtExtensions.SecurityKey));
         var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
         var expirationTimeStamp = DateTime.Now.AddMinutes(5);
-        
-        
+
+
         var claims = new List<Claim>
         {
             new Claim(JwtRegisteredClaimNames.Name, user.Name),

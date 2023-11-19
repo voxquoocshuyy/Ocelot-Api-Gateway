@@ -21,7 +21,7 @@ public class RapperController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles ="Administrator")]
     public IActionResult Delete(int id)
     {
         var shoeDeleted = _rapperRepository.DeleteRapper(id);
