@@ -21,11 +21,11 @@ public class RapperController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    [Authorize(Roles ="Administrator")]
+    [Authorize(Roles = "ADMIN")]
     public IActionResult Delete(int id)
     {
-        var shoeDeleted = _rapperRepository.DeleteRapper(id);
+        var result = _rapperRepository.DeleteRapper(id);
 
-        return shoeDeleted ? NoContent() : NotFound();
+        return result ? NoContent() : NotFound();
     }
 }
