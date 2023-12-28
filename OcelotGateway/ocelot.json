@@ -53,6 +53,18 @@
       "RouteClaimsRequirement": {
         "scope": "00"
       }
+    },
+    {
+      "UpstreamPathTemplate": "/chat",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/Chat",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ]
     }
   ],
   "GlobalConfiguration": {
