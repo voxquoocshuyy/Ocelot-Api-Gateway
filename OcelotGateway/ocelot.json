@@ -57,7 +57,7 @@
     {
       "UpstreamPathTemplate": "/chat",
       "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamPathTemplate": "/api/Chat",
+      "DownstreamPathTemplate": "/api/v1/Chat",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
